@@ -14,6 +14,7 @@ module Rust
         buf = Buffer.malloc
         buf.data = ptr.to_i
         buf.size = string.size
+        buf.to_i
       end
     end
 

@@ -9,10 +9,10 @@ impl Buffer {
     }
 
     pub fn to_string(&self) -> String {
-        self.to_slice().to_string()
+        self.as_slice().to_string()
     }
 
-    pub fn to_slice(&self) -> &str {
+    pub fn as_slice(&self) -> &str {
         let slice = unsafe { std::slice::from_raw_parts(self.data, self.size) };
         unsafe { std::str::from_utf8_unchecked(slice) }
     }
